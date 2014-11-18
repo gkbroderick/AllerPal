@@ -3,162 +3,154 @@
 <head>
 </head>
 <body>
-  <h2 id="toc-final">The final product</h2>
+  <h2 id="toc-final">A list of Allergies</h2>
 
-  <input type="text" id="listname" name="listname" placeholder="Enter List Name">
+<!--   <input type="text" id="listname" name="listname" placeholder="Enter List Name">
   <h3 id="listnameOutput"></h3>
-  <input type="submit" value="Add Listname" onclick="addListName(); return false;">
+  <input type="submit" value="Add Listname" onclick="addListName(); return false;"> -->
 
-  <ul id="todoItems"></ul>
-  <input type="text" id="todo" name="todo"
-      placeholder="What do you need to do?" style="width: 200px;" />
-    <input type="submit" value="Add Todo Item"
-      onclick="addTodo(); return false;"/>
+  <ul id="allergyItems"></ul>
+  <input type="text" id="allergyInput" name="allergy"
+      placeholder="What's your Allergy?" style="width: 200px;" />
+    <input type="submit" value="Add Allergy"
+      onclick="addAllergy(); return false;"/>
 
 
 <script>
 //Adapted from http://www.html5rocks.com/en/tutorials/indexeddb/todo/
 if("indexedDB" in window) {
-  var  AllergyList = {};
+  var allergyList = {};
 
-    //Vendor Prefix- May not use since having fallback Web DB
-    // window.indexedDB = window.indexedDB || window.webkitIndexedDB || window.mozIndexedDB;
-    // if ('webkitIndexedDB' in window) {
-    //   window.IDBTransaction = window.webkitIDBTransaction;
-    //   window.IDBKeyRange = window.webkitIDBKeyRange;
-    // }
+  // Unecessary if using web DB backup?
+  // window.indexedDB = window.indexedDB || window.webkitIndexedDB || window.mozIndexedDB;
+  // if ('webkitIndexedDB' in window) {
+  //   window.IDBTransaction = window.webkitIDBTransaction;
+  //   window.IDBKeyRange = window.webkitIDBKeyRange;
+  // }
 
-    AllergyList.indexedDB = {};
-    AllergyList.indexedDB.db = null;
+  allergyList.indexedDB = {};
+  allergyList.indexedDB.db = null;
 
-    AllergyList.indexedDB.onerror = function(e) {
-      console.log(e);
+  allergyList.indexedDB.onerror = function(e) {
+    console.log(e);
+  };
+
+  allergyList.indexedDB.open = function() {
+    var version = 1;
+    var request = indexedDB.open("allergies", version);
+
+    // We can only create Object stores in a versionchange transaction.
+    request.onupgradeneeded = function(e) {
+      var db = e.target.result;
+
+      // A versionchange transaction is started automatically.
+      e.target.transaction.onerror = allergyList.indexedDB.onerror;
+
+      if(db.objectStoreNames.contains("todo")) {
+        db.deleteObjectStore("todo");
+      }
+
+      var store = db.createObjectStore("todo",
+        {keyPath: "timeStamp"});
     };
 
-    AllergyList.indexedDB.open = function() {
-      var version = 1;
-      var request = indexedDB.open("todos", version);
-
-      // We can only create Object stores in a versionchange transaction.
-      request.onupgradeneeded = function(e) {
-        var db = e.target.result;
-
-        // A versionchange transaction is started automatically.
-        e.target.transaction.onerror = html5rocks.indexedDB.onerror;
-
-        if(db.objectStoreNames.contains("todo")) {
-          db.deleteObjectStore("todo");
-        }
-
-        var store = db.createObjectStore("todo",
-          {keyPath: "timeStamp"});
-      };
-
-      request.onsuccess = function(e) {
-        html5rocks.indexedDB.db = e.target.result;
-        html5rocks.indexedDB.getAllTodoItems();
-      };
-
-      request.onerror = html5rocks.indexedDB.onerror;
+    request.onsuccess = function(e) {
+      allergyList.indexedDB.db = e.target.result;
+      allergyList.indexedDB.getAllallergyItems();
     };
 
-    html5rocks.indexedDB.addTodo = function(todoText) {
-      var db = html5rocks.indexedDB.db;
-      var trans = db.transaction(["todo"], "readwrite");
-      var store = trans.objectStore("todo");
+    request.onerror = allergyList.indexedDB.onerror;
+  };
 
-      var data = {
-        "text": todoText,
-        "timeStamp": new Date().getTime()
-      };
+  allergyList.indexedDB.addAllergy = function(allergyText) {
+    var db = allergyList.indexedDB.db;
+    var trans = db.transaction(["todo"], "readwrite");
+    var store = trans.objectStore("todo");
 
-      var request = store.put(data);
-
-      trans.oncomplete = function(e) {
-        html5rocks.indexedDB.getAllTodoItems();
-      };
-
-      request.onerror = function(e) {
-        console.log("Error Adding: ", e);
-      };
+    var data = {
+      "text": allergyText,
+      "timeStamp": new Date().getTime()
     };
 
-    html5rocks.indexedDB.deleteTodo = function(id) {
-      var db = html5rocks.indexedDB.db;
-      var trans = db.transaction(["todo"], "readwrite");
-      var store = trans.objectStore("todo");
+    var request = store.put(data);
 
-      var request = store.delete(id);
-
-      trans.oncomplete = function(e) {
-        html5rocks.indexedDB.getAllTodoItems();
-      };
-
-      request.onerror = function(e) {
-        console.log("Error Adding: ", e);
-      };
+    trans.oncomplete = function(e) {
+      allergyList.indexedDB.getAllallergyItems();
     };
 
-    html5rocks.indexedDB.getAllTodoItems = function() {
-      var todos = document.getElementById("todoItems");
-      todos.innerHTML = "";
+    request.onerror = function(e) {
+      console.log("Error Adding: ", e);
+    };
+  };
 
-      var db = html5rocks.indexedDB.db;
-      var trans = db.transaction(["todo"], "readwrite");
-      var store = trans.objectStore("todo");
+  allergyList.indexedDB.deleteAllergy = function(id) {
+    var db = allergyList.indexedDB.db;
+    var trans = db.transaction(["todo"], "readwrite");
+    var store = trans.objectStore("todo");
 
-      // Get everything in the store;
-      var keyRange = IDBKeyRange.lowerBound(0);
-      var cursorRequest = store.openCursor(keyRange);
+    var request = store.delete(id);
 
-      cursorRequest.onsuccess = function(e) {
-        var result = e.target.result;
-        if(!!result == false)
-          return;
-
-        renderTodo(result.value);
-        result.continue();
-      };
-
-      cursorRequest.onerror = html5rocks.indexedDB.onerror;
+    trans.oncomplete = function(e) {
+      allergyList.indexedDB.getAllallergyItems();
     };
 
-    function renderTodo(row) {
-      var todos = document.getElementById("todoItems");
-      var li = document.createElement("li");
-      var a = document.createElement("a");
-      var t = document.createTextNode(row.text);
+    request.onerror = function(e) {
+      console.log("Error Adding: ", e);
+    };
+  };
 
-      a.addEventListener("click", function() {
-        html5rocks.indexedDB.deleteTodo(row.timeStamp);
-      }, false);
+  allergyList.indexedDB.getAllallergyItems = function() {
+    var allergies = document.getElementById("allergyItems");
+    allergies.innerHTML = "";
 
-      a.href = "#";
-      a.textContent = " [Delete]";
-      li.appendChild(t);
-      li.appendChild(a);
-      todos.appendChild(li);
-    }
+    var db = allergyList.indexedDB.db;
+    var trans = db.transaction(["todo"], "readwrite");
+    var store = trans.objectStore("todo");
 
-    function addTodo() {
-      var todo = document.getElementById("todo");
-      html5rocks.indexedDB.addTodo(todo.value);
-      todo.value = "";
-    }
+    // Get everything in the store;
+    var keyRange = IDBKeyRange.lowerBound(0);
+    var cursorRequest = store.openCursor(keyRange);
 
-    function addListName() {
-      var listname = document.getElementById("listname");
-      html5rocks.indexedDB.addTodo(listname.value);
-      listname.value = "";
-    }
+    cursorRequest.onsuccess = function(e) {
+      var result = e.target.result;
+      if(!!result == false)
+        return;
 
+      renderAllergy(result.value);
+      result.continue();
+    };
 
-    function init() {
-      html5rocks.indexedDB.open();
-    }
+    cursorRequest.onerror = allergyList.indexedDB.onerror;
+  };
 
-    window.addEventListener("DOMContentLoaded", init, false);
+  function renderAllergy(row) {
+    var allergies = document.getElementById("allergyItems");
+    var li = document.createElement("li");
+    var button = document.createElement("button");
+    var t = document.createTextNode(row.text);
+
+    button.addEventListener("click", function() {
+      allergyList.indexedDB.deleteAllergy(row.timeStamp);
+    }, false);
+
+    button.textContent = " X ";
+    li.appendChild(t);
+    li.appendChild(button);
+    allergies.appendChild(li);
   }
+
+  function addAllergy() {
+    var allergyInput = document.getElementById("allergyInput");
+    allergyList.indexedDB.addAllergy(allergyInput.value);
+    allergyInput.value = "";
+  }
+
+  function init() {
+    allergyList.indexedDB.open();
+  }
+
+  window.addEventListener("DOMContentLoaded", init, false);
+}
 else {
   console.log("Use Web DB")
   }
