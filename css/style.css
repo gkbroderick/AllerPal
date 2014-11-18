@@ -28,10 +28,18 @@ h1 {
   margin-bottom: 0;
 }
 
+.padding {
+  padding-top: 35px;
+}
+
 .labels {
   font-family: "Merriweather";
   color:#585958;
   font-size: 1.25em;
+}
+
+.middle {
+  display: block;
 }
 
 main {
@@ -40,13 +48,13 @@ main {
 }
 
 table {
-  font-family: "Merriweather";
+  font-family: "Montreal";
   font-size: 1em;
   color:#585958;
   }
 
   #todoItems {
-  font-family: "Merriweather";
+  font-family: "Montreal";
   font-size: 1em;
   color:#585958;
   }
@@ -129,6 +137,14 @@ button:active {
   margin:auto;
 }
 
+.edit-two { /*edit button, the real one */
+  width: 3.125em;
+  border-radius: 1.5625em ;
+  font-size: 1em;
+  margin:auto;
+}
+
+
 .delete {
   width:2.5em;
   border-radius: 1.25em;
@@ -147,6 +163,7 @@ button:active {
   z-index: -1;
   padding: 1% 0 1% 3%;
   margin:2% 0 8% 0;
+  font-family: "Montreal";
 }
 
 .plus {
