@@ -1,0 +1,155 @@
+.flexbox {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    -webkit-justify-content: flex-start;
+    justify-content: flex-start;
+    -webkit-align-content: stretch;
+    align-content: stretch;
+    -webkit-align-items: flex-start;
+    align-items: flex-start;
+}
+
+.flex-item {
+    -webkit-order: 0;
+    order: 0;
+    -webkit-flex: 0 1 auto;
+    flex: 0 1 auto;
+    -webkit-align-self: auto;
+    align-self: auto;
+}
+
+button:active {
+  background-color:#585958 ;
+}
+
+
+
+@media only screen and (min-width: 480px) {
+
+h1 {
+  font-size: 2.25em;
+}
+
+input {
+  padding: 1em 0 1em 0;
+}
+
+.labels {
+  font-size: 1.75em;
+  margin: 1.5em 0 0 0;
+}
+
+button:hover {
+  background-color:#585958 ;
+}
+
+.flexbox{
+  -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+}
+
+p {
+  font-size: 1.5em;
+}
+
+.edit {
+  width: 4em;
+  border-radius: 2em;
+  padding: 1em;
+}
+
+.delete, .plus {
+  width: 3.5em;
+  border-radius: 2em;
+  padding:1em 1.25em;
+
+}
+
+.plus {
+  margin-left:-3em;
+}
+
+.info {
+  max-width: 20em;
+  margin-top:.5%;
+
+  }
+}
+
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+
+  h1 {
+    font-size: 2.1em;
+  }
+
+  .flex-item {
+    font-size: 1em;
+  }
+
+  .plus {
+    margin-top:-.45em;
+  }
+ }
+
+ @media only screen and (min-width: 767px) and (max-width: 1024px) {
+
+  .plus {
+    margin-top: -.15em;
+  }
+}
+
+ @media only screen and (min-width: 1025px) and (max-width: 1366px) {
+
+  .plus {
+    margin-top: -.075em;
+    margin-left:-1em;
+  }
+}
+ @media only screen and (min-width: 1367px) and (max-width: 1599px) {
+
+  .plus {
+    margin-top: .25em;
+    margin-left:-1.5em;
+  }
+}
+
+@media only screen and (min-width: 1600px) and (max-width: 1680px) {
+
+  .plus {
+    margin-top: .3em;
+    margin-left: -1em;
+  }
+}
+
+@media only screen and (min-width: 1681px) and (max-width: 1920px) {
+
+  .plus {
+    margin-top: .125em;
+    padding:1.25em;
+    margin-left: -.85em;
+  }
+}
+
+@media only screen and (min-width: 1921px) and (max-width: 2360px) {
+
+  .plus {
+    margin-top: .075em;
+    margin-left: -1em;
+    font-size: 1.25em;
+  }
+}
+
+@media only screen and (min-width: 2361px) and (max-width: 2560px) {
+
+  .plus {
+    margin-top: .4em;
+    margin-left: -1.25em;
+    font-size: 1.25em;
+  }
+}

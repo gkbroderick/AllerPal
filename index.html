@@ -3,9 +3,11 @@
 <head>
   <title>allerPal</title>
   <meta charset="utf-8">
-  <link rel="stylesheet" href="css/normalize.css">
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/base.css">
   <link rel="stylesheet" href="css/typography.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/module.css">
+  <link rel="stylesheet" href="css/state.css">
 </head>
 
 <body onload="init();">
@@ -13,14 +15,14 @@
   <h1> Join us and snack safe</h1>
   <main>
 
-    <section class="padding">
+    <section>
       <form name="input" action="" method="get" onsubmit="return display(this);">
       <label class="labels" for="new-jobid">Enter Your Child's Name / ID</label>
     </section>
 
     <section>
       <input type="text" name="jobid" placeholder="Name"/>
-      <button class="edit">Add</button>
+      <button class="edit">add</button>
      <!-- <button class="edit-two">Edit</button> EDIT option-->
         <div>
           <table>
@@ -47,7 +49,7 @@
 
     <section class="middle">
     <input type="text" id="todo" name="todo" placeholder="Allergy"/>
-      <button class="edit">Add</button>
+      <button class="edit">add</button>
       </form>
     </section>
 
