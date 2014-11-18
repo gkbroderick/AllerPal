@@ -67,8 +67,8 @@ function loadTodoItems(tx, rs) {
 }
 
 function renderTodo(row) {
-  return "<li>" + row.todo + " <a href='javascript:void(0);'  onclick='create.webdb.deleteTodo(" + row.ID + ");''><button class='delete'>x</button></a></li>";
-} 
+  return "<li>" + row.todo + " <a href='javascript:void(0);'  onclick='create.webdb.deleteTodo(" + row.ID + ");''><button class='delete'>x</button><button class='edit-two'>Edit</button</a></li>";
+} //Edit button optional
 
 function addTodo() {
   var todo = document.getElementById("todo");
