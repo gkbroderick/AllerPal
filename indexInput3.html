@@ -5,15 +5,15 @@
 </head>
 <body>
   <div id="main">
-    <p>Enter You Child's Name</p>
+    <p>Enter Your Child's Name</p>
       <form name= "myForm" id="delete">
         <input name="firstname" id="firstname" />
         <input type= "button" id="nameSubmit" onclick= "OnSubmit()" value="Submit">
       </form>
         <h2 id="FinalName"></h2>
-          <form type="post" onsubmit="addTodo(); return false;">
+          <form type="post" onsubmit="addAllergy(); return false;">
            <label class="todo-label" for="new-todo">Enter Your Allergy:</label>
-            <input type="text" id="allergyInput" name="todo" placeholder="Allergy" style="width: 200px;" />
+            <input type="text" id="allergyInput" name="allergy" placeholder="Allergy" style="width: 200px;" />
               <button>Edit</button>
           </form>
             <ul id="allergyItems"></ul>
