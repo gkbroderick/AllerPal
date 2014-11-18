@@ -126,6 +126,7 @@ if("indexedDB" in window) {
     var button = document.createElement("button");
     var EditButton = document.createElement("button");
     var editInput = document.createElement("input");
+    var SaveChange = document.createElement("button");
     var t = document.createTextNode(row.text);
 
     button.addEventListener("click", function() {
@@ -134,32 +135,39 @@ if("indexedDB" in window) {
 
     EditButton.addEventListener("click", function() {
       li.appendChild(editInput);
-    //   allergyList.indexedDB.editAllergy(row.timeStamp);
+      li.appendChild(SaveChange)
+      li.removeChild(button);
+      li.removeChild(EditButton)
+      allergyList.indexedDB.editAllergy(row.timeStamp);
     }, false);
+
+
+
 
     button.textContent = " X ";
     EditButton.textContent = "Edit";
+    SaveChange.textContent = "Save Changes"
     li.appendChild(t);
     li.appendChild(button);
     li.appendChild(EditButton)
     allergies.appendChild(li);
   }
 
-  allergyList.indexedDB.editAllergy = function(id) {
-    var db = allergyList.indexedDB.db;
-    var trans = db.transaction(["test"], "readwrite");
-    var store = trans.objectStore("test");
+  // allergyList.indexedDB.editAllergy = function(id) {
+  //   var db = allergyList.indexedDB.db;
+  //   var trans = db.transaction(["test"], "readwrite");
+  //   var store = trans.objectStore("test");
 
-    var request = store.get(id);
+  //   var request = store.get(id);
 
-    trans.oncomplete = function(e) {
-      allergyList.indexedDB.getAllallergyItems();
-    };
+  //   trans.oncomplete = function(e) {
+  //     allergyList.indexedDB.getAllallergyItems();
+  //   };
 
-    request.onerror = function(e) {
-      console.log("Error Adding: ", e);
-    };
-  };
+  //   request.onerror = function(e) {
+  //     console.log("Error Adding: ", e);
+  //   };
+  // };
 
   function addAllergy() {
     var allergyInput = document.getElementById("allergyInput");
