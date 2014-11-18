@@ -3,7 +3,7 @@
   <head>
     <title>allerPal</title>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="css/mornalize.css">
+    <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/style.css">
   </head>
   <body>
@@ -13,12 +13,13 @@
         <h2> Enter Child's Name / ID </H2>
           <section>
             <input type="text">
-            <button class="edit"> add </button>
+            <button class="add"> add </button>
           </section>
-        <h2> Enter Child's Allergy</h2>
-          <section>
+          <section class="middle">
+            <h2> Enter Child's Allergy</h2>
+
             <input type="text">
-            <button class="edit"> edit </button>
+            <button class="add"> add </button>
             <button class="delete"> x </button>
           </section>
           <section class="clearfix">
@@ -26,7 +27,9 @@
             <button class="plus"> + </button>
           </section>
       </main>
-        <button> Publish </button>
-        <button> Add Another Child </button>
+        <section class="flexbox">
+          <button class="flex-item"> Publish </button>
+          <button class="flex-item"> Add Another Child </button>
+        </section>
   </body>
 </html>
