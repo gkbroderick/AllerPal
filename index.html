@@ -1,32 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>allerPal</title>
-    <meta charset="utf-8">
-    <link rel="stylesheet" href="css/mornalize.css">
-    <link rel="stylesheet" href="css/style.css">
-  </head>
-  <body>
-    <img src="images/logo.png"/>
-    <h1> Join us and snack safe </h1>
-      <main>
-        <h2> Enter Child's Name / ID </H2>
-          <section>
-            <input type="text">
-            <button class="edit"> add </button>
-          </section>
-        <h2> Enter Child's Allergy</h2>
-          <section>
-            <input type="text">
-            <button class="edit"> edit </button>
-            <button class="delete"> x </button>
-          </section>
-          <section class="clearfix">
-            <p class="info"> Add Another Allergy </p>
-            <button class="plus"> + </button>
-          </section>
-      </main>
-        <button> Publish </button>
-        <button> Add Another Child </button>
+<head>
+  <title>allerPal</title>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/typography.css">
+</head>
+
+<body onload="init();">
+  <img src="images/logo.png"/>
+  <h1> Join us and snack safe</h1>
+  <main>
+      <form name="input" action="" method="get" onsubmit="return display(this);">  
+    <label class="labels" for="new-jobid">Enter Your Child's Name / ID</label>
+    
+    <section>
+      <input type="text" name="jobid" placeholder="Name"/>
+      <button class="edit">Add</button>
+        <div>
+          <table>
+            <tr>
+              <th></th>
+              <th></th>
+              <th></th>
+            </tr>
+            <tr>
+              <td><output name="o_jobid" style="width:100px; height:20px"></output></td>
+              <td><output name="o_date" style="width:100px; height:20px"></output></td>
+              <td><output name="o_description"></output></td>
+            </tr>
+          </table>
+        </div>
+      </form>
+    </section>
+
+    <section class="clearfix">
+      <ul id="todoItems"></ul>
+      <form type="post" onsubmit="addTodo(); return false;">
+    <label class="labels">Enter Child's Allergy</label>
+    </section>
+    <section class="clearfix">
+    <input type="text" id="todo" name="todo" placeholder="Allergy"/>
+      <button class="edit">Add</button>
+      </form> 
+    </section>
+
+    <section class="clearfix">
+    <p class="info"> Add Another Allergy </p>
+    <button class="plus"> + </button>
+  </section>
+  </main>
+    
+  <section class="flexbox">
+    <button class="flex-item"> Publish </button>
+    <button class="flex-item"> Add Another Child </button>
+  </section>
+
+  <script src="js/allergy.js"></script>
+  <script src="js/vendor/jquery-1.10.2.min.js"></script>
+  <script src="js/vendor/modernizr-2.6.2.min.js"></script>
   </body>
 </html>
+
+
