@@ -1,20 +1,30 @@
 .labels {
-  font-family: "Merriweather";
+  font-family: "Merriweather-Light";
   margin-bottom: 2.5%;
   color:#585958;
   font-size: 1.25em;
   margin-top: 45px;
-  display: inline-block;
+  display: block;
 }
 
 .middle {
   display: block;
 }
 
- #todoItems { /*formats allergies and buttons*/
-  font-family: "Montreal";
-  font-size: 1.75em;
+.nameOutput {
+  font-family:"Montreal";
+  font-weight: lighter;
+  font-size: 2em;
+  margin-bottom: .5em;
   color:#585958;
+}
+
+ #allergyItems { /*formats allergies and buttons*/
+  font-family: "Montreal";
+  font-size: 1.25em;
+  color:#585958;
+  font-weight: lighter;
+  line-height: 1.5em;
  }
 
 button {
@@ -33,32 +43,27 @@ button {
   border-radius: 1.5625em ;
   font-size: 1em;
   margin:auto;
+  background-color: #0a9bae;
+  border: none;
+  color: white;
+  font-family: "Merriweather-Light"
 }
 
-.edit-two { /*edit button, the real one */
-  width: 3.125em;
+/*.edit-two { /*edit button, the real one */
+/*  width: 3.125em;
   border-radius: 1.5625em ;
   font-size: 1em;
   margin:auto;
-}
+}*/
 
-
-.delete {
+#allergyItems .delete {
   width:2.5em;
   border-radius: 1.25em;
   background-color: #f34f3a;
-  font-size: 1em;
-  margin:auto;
-}
-
-#todoItems .delete {
-  width:2.5em;
-  border-radius: 1.25em;
-  background-color: #f34f3a;
-  font-size: 1em;
-  margin:auto;
-  font-size: 0.8em;
-  padding: 1% 0% 1% 0%;
+  font-size: 0.65em;
+  padding: .5em;
+  margin-left:.75em;
+  font-family: "Montreal";
 }
 
 .info {
