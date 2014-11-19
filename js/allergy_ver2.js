@@ -1,15 +1,14 @@
-var fn = document.getElementById("firstname");
+var fn = document.getElementById("nameInput");
 
-fn.value = localStorage.getItem("firstname");
+fn.value = localStorage.getItem("nameInput");
 document.getElementById("nameOutput").textContent = fn.value;
 
 fn.addEventListener('input', function() {
-  localStorage.setItem('firstname', fn.value);}, false);
+  localStorage.setItem('nameInput', fn.value);}, false);
 
-document.getElementById("nameSubmitButton").addEventListener('click', function(){
+document.getElementById("nameSubmit").addEventListener('click', function(){
   document.getElementById("nameOutput").textContent = fn.value;
   });
-
 
 
 if("indexedDB" in window) {
@@ -126,7 +125,7 @@ if("indexedDB" in window) {
       allergyList.indexedDB.deleteAllergy(row.timeStamp);
     }, false);
 
-    Xbutton.innerHTML = "<button>" + " X " + "</button>";
+    Xbutton.innerHTML = "<button class='delete'>" + " X " + "</button>";
     li.appendChild(t);
     li.appendChild(Xbutton);
     allergies.appendChild(li);
@@ -144,4 +143,3 @@ if("indexedDB" in window) {
 
   window.addEventListener("DOMContentLoaded", init2(), false);
 }
-
