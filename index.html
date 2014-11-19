@@ -1,72 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <title>allerPal</title>
-  <meta charset="utf-8">
-  <link rel="stylesheet" href="css/base.css">
-  <link rel="stylesheet" href="css/typography.css">
-  <link rel="stylesheet" href="css/layout.css">
-  <link rel="stylesheet" href="css/module.css">
-  <link rel="stylesheet" href="css/state.css">
-</head>
+  <head>
+    <title>allerPal</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/typography.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/module.css">
+    <link rel="stylesheet" href="css/state.css">
+  </head>
 
-<body onload="init();">
-  <img src="images/logo.png"/>
-  <h1> Join us and snack safe</h1>
-  <main>
-
-    <section>
-      <form name="input" action="" method="get" onsubmit="return display(this);">
-      <label class="labels" for="new-jobid">Enter Your Child's Name / ID</label>
-    </section>
-
-    <section>
-      <input type="text" name="jobid" placeholder="Name"/>
-      <button class="edit">add</button>
-     <!-- <button class="edit-two">Edit</button> EDIT option-->
-        <div>
-          <table>
-            <tr>
-              <th></th>
-              <th></th>
-              <th></th>
-            </tr>
-            <tr>
-              <td><output name="o_jobid" style="width:100px; height:20px"></output></td>
-              <td><output name="o_date" style="width:100px; height:20px"></output></td>
-              <td><output name="o_description"></output></td>
-            </tr>
-          </table>
-        </div>
+  <body>
+    <header>
+      <img src="images/logo.png"/>
+      <h1> Join us and snack safe</h1>
+    </header>
+    <main>
+      <form>
+        <label class="labels" for="name">Enter Your Child's Name / ID</label>
+        <input type="text" name="name" id="nameInput">
+        <input type= "button" class="edit" id="nameSubmit" value="add">
+        <h2 id="nameOutput"></h2>
       </form>
-    </section>
 
-    <section class="middle">
-      <ul id="todoItems"></ul>
-      <form type="post" onsubmit="addTodo(); return false;">
-      <label class="labels">Enter Child's Allergy</label>
-    </section>
+      <section class="middle">
+        <ul id="allergyItems"></ul>
+        <form onsubmit="addAllergy(); return false;">
+          <label class="labels clearfix">Enter Child's Allergy</label>
+          <input type="text" id="allergyInput" name="allergyInput" placeholder="Allergy">
+          <button class="edit">add</button>
+        </form>
+      </section>
 
-    <section class="middle">
-    <input type="text" id="todo" name="todo" placeholder="Allergy"/>
-      <button class="edit">add</button>
-      </form>
-    </section>
-
-    <section class="clearfix">
-    <p class="info"> Add Another Allergy </p>
-    <button class="plus"> + </button>
-    </section>
-
-  </main>
+      <section class="clearfix">
+        <p class="info"> Add Another Allergy </p>
+        <button class="plus" onclick="addAllergy(); return false;"> + </button>
+      </section>
 
     <section class="flexbox">
       <button class="flex-item"> Publish </button>
       <button class="flex-item"> Add Another Child </button>
     </section>
 
-  <script src="js/allergy.js"></script>
-  <script src="js/vendor/jquery-1.10.2.min.js"></script>
-  <script src="js/vendor/modernizr-2.6.2.min.js"></script>
+    </main>
+
+    <script src="js/allergy_ver2.js"></script>
+    <script src="js/vendor/jquery-1.10.2.min.js"></script>
+    <script src="js/vendor/modernizr-2.6.2.min.js"></script>
 </body>
 </html>
