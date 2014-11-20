@@ -29,23 +29,23 @@
           <label class="labels">Enter Child's Allergy</label>
           <div class="clearfix"></div>
           <input type="text" id="allergyInput" name="allergyInput" placeholder="Allergy" />
+          <input type= "button" class="edit" id="nameSubmit" value="add">
           <!--<button class="edit">add</button> -->
         </form>
       </section>
 
-      <section class="clearfix">
-        <p class="info"> Add Allergy </p>
-        <button class="plus" onclick="addAllergy(); return false;"> + </button>
-      </section> 
+      <!-- <p class="info"> Add Allergy </p>
+      <button class="plus" onclick="addAllergy(); return false;"> + </button> -->
 
-    <section class="flexbox">
-      <button class="flex-item"> Publish </button>
-      <!--<button class="flex-item"> Add Another Child </button>-->
+    <section>
+      <button> Publish </button>
+      <!-- <button class="flex-item"> Add Another Child </button> -->
     </section>
 
     </main>
    <script src="js/vendor/jquery-1.10.2.min.js"></script>
     <script src="js/vendor/modernizr-2.6.2.min.js"></script>
+    <script src="js/vendor/indexeddb.shim.min.js"></script>
      <script src="js/allergy_ver2.js"></script>
     <script src="js/animations.js"></script>
 </body>
