@@ -80,20 +80,20 @@ function renderList() {
     localStorage.setObj("allergyKey", allergies)
   }
 }
-
-document.getElementById("allergyInput").onkeydown=function(e){
-    if(e.keyCode==13){
-      addToList(allergyInput.value);
-      allergyInput.value= "";
-      renderList();
-    }
+if (allergyInput){
+  document.getElementById("allergyInput").onkeydown=function(e){
+      if(e.keyCode==13){
+        addToList(allergyInput.value);
+        allergyInput.value= "";
+        renderList();
+      }
+  }
+  document.getElementById("addAnotherAllergy").addEventListener('click', function() {
+    addToList(allergyInput.value);
+    allergyInput.value= "";
+    renderList();
+  }, false);
 }
-
-document.getElementById("addAnotherAllergy").addEventListener('click', function() {
-  addToList(allergyInput.value);
-  allergyInput.value= "";
-  renderList();
-}, false);
 
 //Adapted from David Walsh http://davidwalsh.name/event-delegate
 document.getElementById("allergyItems").addEventListener("click",function(e) {
