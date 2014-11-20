@@ -1,14 +1,23 @@
-var fn = document.getElementById("nameInput");
+var childName = document.getElementById("nameInput");
+var childNameOutput = document.getElementById("nameOutput")
 
-fn.value = localStorage.getItem("nameInput");
-document.getElementById("nameOutput").textContent = fn.value;
+if (childName) {
+  childName.value = localStorage.getItem("nameInput");
+  document.getElementById("nameOutput").textContent = childName.value;
 
-fn.addEventListener('input', function() {
-  localStorage.setItem('nameInput', fn.value);}, false);
+  childName.addEventListener('input', function() {
+    localStorage.setItem('nameInput', childName.value);}, false);
 
-document.getElementById("nameSubmit").addEventListener('click', function(){
-  document.getElementById("nameOutput").textContent = fn.value;
-  });
+  document.getElementById("nameSubmit").addEventListener('click', function(){
+    childNameOutput.textContent = childName.value;
+    });
+}
+
+if(childNameOutput) {
+  document.getElementById("nameOutput").textContent = localStorage.getItem("nameInput");
+};
+
+
 
 
 if("indexedDB" in window) {
