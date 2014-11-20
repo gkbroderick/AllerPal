@@ -1,0 +1,73 @@
+.labels {
+  font-family: "Merriweather-Light";
+  margin-bottom: .5em;
+  color:#585958;
+  font-size: 1.25em;
+  margin-top: 45px;
+  display: block;
+}
+
+.middle {
+  display: block;
+}
+
+.nameOutput {
+  font-family:"Montreal";
+  font-weight: lighter;
+  font-size: 2em;
+  margin-bottom: .5em;
+  color:#585958;
+}
+
+ #allergyItems { /*formats allergies and buttons*/
+  font-family: "Montreal";
+  font-size: 1.25em;
+  color:#585958;
+  font-weight: lighter;
+  line-height: 1.5em;
+ }
+
+button {
+  font-size: 1.5em;
+  font-family: "Merriweather-Light";
+  padding:3%;
+  background-color: #0a9bae;
+  color:white;
+  border-radius: .625em;
+  border:none;
+  width:95%;
+  margin: 3% 2.5% 3% 2.5%;
+}
+
+.edit {
+  width: 3.125em;
+  border-radius: 1.5625em ;
+  line-height: 2em;
+  font-size: 1em;
+  background-color: #0a9bae;
+  border: none;
+  color: white;
+  font-family: "Merriweather-Light"
+}
+
+/*.edit-two { /*edit button, the real one */
+/*  width: 3.125em;
+  border-radius: 1.5625em ;
+  font-size: 1em;
+  margin:auto;
+}*/
+
+#allergyItems .delete {
+  width:2.5em;
+  border-radius: 1.25em;
+  background-color: #f34f3a;
+  font-size: 0.65em;
+  padding: .5em;
+  margin-left:.75em;
+  font-family: "Montreal";
+}
+
+.inline {
+	display: inline;
+}
+
