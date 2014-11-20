@@ -2,6 +2,7 @@ var childName = document.getElementById("nameInput");
 var childNameOutput = document.getElementById("nameOutput");
 var allergyItems = document.getElementById("allergyItems");
 var allergyInput = document.getElementById("allergyInput");
+var allergies = [];
 
 Storage.prototype.setObj = function(key, obj) {
     return this.setItem(key, JSON.stringify(obj))
@@ -31,9 +32,6 @@ if(childNameOutput) {
   document.getElementById("nameOutput").textContent = localStorage.getItem("nameInput");
 };
 
-
-
-var allergies = [];
 
 function outputList() {
   var retrievedData = localStorage.getObj("allergyKey");
