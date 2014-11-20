@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>allerPal</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/typography.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/module.css">
+    <link rel="stylesheet" href="css/state.css">
+  </head>
+
+  <body>
+    <header>
+      <img src="images/logo.png"/>
+      <h1> Join us and snack safe</h1>
+    </header>
+    <main>
+      <form>
+        <label class="labels" for="name">Enter Your Child's Name / ID</label>
+        <input type="text" name="name" id="nameInput">
+        <input type= "button" class="edit" id="nameSubmit" value="add">
+        <h2 id="nameOutput"></h2>
+      </form>
+
+      <section class="middle">
+        <ul id="allergyItems"></ul>
+          <label class="labels">Enter Child's Allergy</label>
+          <div class="clearfix"></div>
+          <input type="text" id="allergyInput" name="allergyInput" placeholder="Allergy">
+          <button id="edit">add</button>
+      </section>
+
+      <section class="clearfix">
+        <p class="info"> Add Another Allergy </p>
+        <button id="plus" class="plus" onclick="addAllergy()"> + </button>
+      </section>
+
+    <section class="flexbox">
+      <button class="flex-item"> Publish </button>
+      <button class="flex-item"> Add Another Child </button>
+    </section>
+
+    </main>
+
+    <script src="js/allergy_LocalStorageOnly.js"></script>
+    <script src="js/vendor/jquery-1.10.2.min.js"></script>
+    <script src="js/vendor/modernizr-2.6.2.min.js"></script>
+</body>
+</html>
