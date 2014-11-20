@@ -19,12 +19,18 @@ if (childName) {
 
   document.getElementById("nameSubmit").addEventListener('click', function(){
     childNameOutput.textContent = childName.value;
-    });
+    }, false);
+  document.getElementById("nameInput").onkeydown=function(e){
+      if(e.keyCode==13){
+        childNameOutput.textContent = childName.value;
+    }
+  }
 }
 
 if(childNameOutput) {
   document.getElementById("nameOutput").textContent = localStorage.getItem("nameInput");
 };
+
 
 
 var allergies = [];
@@ -54,71 +60,51 @@ function removeFromList(item) {
   localStorage.setObj("allergyKey", retrievedData);
 }
 
-document.getElementById("edit").addEventListener('click', function() {
+function renderList() {
+  var retrievedData = localStorage.getObj("allergyKey");
+  allergyItems.innerHTML = "";
+  if (retrievedData){
+      for (var i = 0; i < retrievedData.length; i++) {
+
+        var li = document.createElement("li");
+        var t = document.createTextNode(retrievedData[i]);
+        var Xbutton = document.createElement("button");
+        var bt = document.createTextNode("X");
+
+        li.appendChild(t);
+        li.appendChild(Xbutton);
+        Xbutton.appendChild(bt);
+        Xbutton.setAttribute("class", "delete")
+        allergyItems.appendChild(li);
+      }
+    }
+  else{
+    localStorage.setObj("allergyKey", allergies)
+  }
+}
+
+document.getElementById("allergyInput").onkeydown=function(e){
+    if(e.keyCode==13){
+      addToList(allergyInput.value);
+      allergyInput.value= "";
+      renderList();
+    }
+}
+
+document.getElementById("addAnotherAllergy").addEventListener('click', function() {
   addToList(allergyInput.value);
   allergyInput.value= "";
   renderList();
 }, false);
 
-
-function renderList() {
-var retrievedData = localStorage.getObj("allergyKey");
-allergyItems.innerHTML = "";
-  for (var i = 0; i < retrievedData.length; i++) {
-
-    var li = document.createElement("li");
-    // var Xbutton = document.createElement("Xbutton");
-    // var t = document.createTextNode(retrievedData[i]);
-
-    li.innerHTML = retrievedData[i];
-    // + "<button class='delete'>" + " X " + "</button>";
-    // li.appendChild(t);
-    // li.appendChild(Xbutton);
-    allergyItems.appendChild(li);
-
+//Adapted from David Walsh http://davidwalsh.name/event-delegate
+document.getElementById("allergyItems").addEventListener("click",function(e) {
+  if(e.target && e.target.nodeName == "BUTTON") {
+      console.log("Anchor element clicked!");
+      removeFromList(e.target.parentNode.firstChild.textContent);
+      renderList();
   }
-}
-
-function getTarget(e) {                          // Declare function
-  if (!e) {                                      // If there is no event object
-    e = window.event;                            // Use old IE event object
-  }
-  return e.target || e.srcElement;               // Get the target of event
-}
-
-function itemDone(e) {                           // Declare function
-  // Remove item from the list
-  var target, elParent, elGrandparent;           // Declare variables
-  target = getTarget(e);                         // Get the item clicked link
-
-  elParent = target.parentNode;                  // Get its list item
-  elGrandparent = target.parentNode.parentNode;  // Get its list
-
-  removeFromList(target.firstChild.nodeValue);
-  // elGrandparent.removeChild(elParent);           // Remove list item from list
-  elParent.removeChild(target);           // Remove list item from list
-
-
-  // Prevent the link from taking you elsewhere
-  if (e.preventDefault) {                        // If preventDefault() works
-    e.preventDefault();                          // Use preventDefault()
-  } else {                                       // Otherwise
-    e.returnValue = false;                       // Use old IE version
-  }
-}
-
-// Set up event listeners to call itemDone() on click
-var el = document.getElementById('allergyItems');// Get shopping list
-if (el.addEventListener) {                       // If event listeners work
-  el.addEventListener('click', function(e) {     // Add listener on click
-    itemDone(e);                                 // It calls itemDone()
-  }, false);                                     // Use bubbling phase for flow
-} else {                                         // Otherwise
-  el.attachEvent('onclick', function(e){         // Use old IE model: onclick
-    itemDone(e);                                 // Call itemDone()
-  });
-}
-
+});
 
 window.addEventListener("DOMContentLoaded", renderList(), false);
 
