@@ -70,8 +70,10 @@ function renderList() {
         var bt = document.createTextNode("X");
 
         li.appendChild(t);
-        li.appendChild(Xbutton);
-        Xbutton.appendChild(bt);
+        if (allergyInput) {
+          li.appendChild(Xbutton);
+          Xbutton.appendChild(bt);
+        }
         Xbutton.setAttribute("class", "delete")
         allergyItems.appendChild(li);
       }
@@ -80,27 +82,33 @@ function renderList() {
     localStorage.setObj("allergyKey", allergies)
   }
 }
+
 if (allergyInput){
   document.getElementById("allergyInput").onkeydown=function(e){
       if(e.keyCode==13){
         addToList(allergyInput.value);
         allergyInput.value= "";
         renderList();
+        $("#allergyItems li:last-of-type").hide().fadeIn(200);
       }
   }
   document.getElementById("addAnotherAllergy").addEventListener('click', function() {
     addToList(allergyInput.value);
     allergyInput.value= "";
     renderList();
+    allergyInput.scrollIntoView();
+    $("#allergyItems li:last-of-type").hide().fadeIn(200);
   }, false);
 }
 
 //Adapted from David Walsh http://davidwalsh.name/event-delegate
 document.getElementById("allergyItems").addEventListener("click",function(e) {
   if(e.target && e.target.nodeName == "BUTTON") {
-      console.log("Anchor element clicked!");
-      removeFromList(e.target.parentNode.firstChild.textContent);
-      renderList();
+      $(e.target.parentNode).fadeOut(200);
+      setTimeout(function(){
+        removeFromList(e.target.parentNode.firstChild.textContent);
+        renderList();
+      }, 200);
   }
 });
 
