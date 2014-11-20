@@ -1,44 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>allerPal Ver 3 test</title>
+    <title>allerPal - Please be Advised</title>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/typography.css">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/layout.css">
-    <link rel="stylesheet" href="css/module.css">
-    <link rel="stylesheet" href="css/state.css">
+     <link rel="stylesheet" href="css/module.css">
+     <link rel="stylesheet" href="css/state.css">
   </head>
-
   <body>
-    <header>
-      <img src="images/logo.png"/>
-      <h1> Join us and snack safe</h1>
-    </header>
-    <main>
-      <section class="Child-Name">
-        <label class="labels" for="name">Enter Your Child's Name / ID</label>
-        <input type="text" name="name" id="nameInput">
-        <input type= "button" class="edit" id="nameSubmit" value="add">
-        <h2 id="nameOutput" class="nameOutput"></h2>
-      </section>
-
-      <section class="middle">
-        <ul id="allergyItems" class="middle"></ul>
-        <label class="labels">Enter Child's Allergy</label>
-        <div class="clearfix"></div>
-        <input type="text" id="allergyInput" name="allergyInput" placeholder="Allergy">
-        <input type="button" class="edit" id="addAnotherAllergy" value="add">
-      </section>
-
-    <section>
-      <button> Publish </button>
+    <img class="logo"src="images/logo.png"/>
+    <h1 class="Page-Header">Advisory Warning</h1>
+    <section class="warning-text">
+      <p>The list of allergies you compile may be private information. We do not knowingly collect any of your information as you create your list, which will be yours.</p>
+      <p>The allergy information you create will be a static URL. This URL will be a link to the completed list you produce.</p>
+      <p>Please consider the sharing of this list as permission to advise others of your child’s allergy information. Initially, only you will have access to your list’s URL, but others will be able to share this link. If you would like to keep your child’s allergies private, please advise those with whom you share this link to not share this information with others.</p>
+      <p>This list is for awareness purposes only, and is not intended as a guide for treatment or as a medical directive.</p>
     </section>
-
-    </main>
-
-    <script src="js/allergy_ver3.js"></script>
-    <script src="js/vendor/jquery-1.10.2.min.js"></script>
-    <script src="js/vendor/modernizr-2.6.2.min.js"></script>
-</body>
+    <a href="ListInput.html">
+      <button>Let's get started</button>
+    </a>
+  </body>
 </html>

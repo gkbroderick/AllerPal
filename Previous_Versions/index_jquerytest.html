@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>allerPal</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/typography.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/module.css">
+    <link rel="stylesheet" href="css/state.css">
+  </head>
+
+  <body>
+    <header>
+      <img src="images/logo.png"/>
+      <h1 class="snack-safe"> Join us and snack safe</h1>
+    </header>
+    <main>
+      <form>
+        <label class="labels" for="name">Enter Your Child's Name / ID</label>
+        <input type="text" name="name" id="nameInput">
+        <input type= "button" class="edit" id="nameSubmit" value="add">
+        <h2 id="nameOutput" class="nameOutput"></h2>
+      </form>
+
+        <ul id="allergyItems"></ul>
+      <section class="middle">
+        <form class="submitForm" onsubmit="addAllergy(); return false;">
+          <label class="labels">Enter Child's Allergy</label>
+          <div class="clearfix"></div>
+          <input type="text" id="allergyInput" name="allergyInput" placeholder="Allergy" />
+          <input type= "button" class="edit" id="nameSubmit" value="add">
+          <!--<button class="edit">add</button> -->
+        </form>
+      </section>
+
+      <!-- <p class="info"> Add Allergy </p>
+      <button class="plus" onclick="addAllergy(); return false;"> + </button> -->
+
+    <section>
+      <button> Publish </button>
+      <!-- <button class="flex-item"> Add Another Child </button> -->
+    </section>
+
+    </main>
+   <script src="js/vendor/jquery-1.10.2.min.js"></script>
+    <script src="js/vendor/modernizr-2.6.2.min.js"></script>
+    <script src="js/vendor/indexeddb.shim.min.js"></script>
+     <script src="Previous_Versions/allergy_ver2.js"></script>
+    <script src="js/animations.js"></script>
+</body>
+</html>

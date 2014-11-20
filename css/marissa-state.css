@@ -9,12 +9,12 @@ input[type="text"] {
     padding:1em 0 1em 0;
   }
 
-h1 {
-  font-size: 1.5em;
+.Page-Header {
+  font-size: 11.5em;
   letter-spacing: .05em;
 }
 
-p {
+.warning-text {
   font-size: 1.35em;
   }
 }
