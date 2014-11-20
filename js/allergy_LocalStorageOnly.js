@@ -61,21 +61,25 @@ function removeFromList(item) {
 }
 
 function renderList() {
-var retrievedData = localStorage.getObj("allergyKey");
-allergyItems.innerHTML = "";
-  for (var i = 0; i < retrievedData.length; i++) {
+  var retrievedData = localStorage.getObj("allergyKey");
+  allergyItems.innerHTML = "";
+  if (retrievedData){
+      for (var i = 0; i < retrievedData.length; i++) {
 
-    var li = document.createElement("li");
-    var t = document.createTextNode(retrievedData[i]);
-    var Xbutton = document.createElement("button");
-    var bt = document.createTextNode("X");
+        var li = document.createElement("li");
+        var t = document.createTextNode(retrievedData[i]);
+        var Xbutton = document.createElement("button");
+        var bt = document.createTextNode("X");
 
-    li.appendChild(t);
-    li.appendChild(Xbutton);
-    Xbutton.appendChild(bt);
-    Xbutton.setAttribute("class", "delete")
-    allergyItems.appendChild(li);
-
+        li.appendChild(t);
+        li.appendChild(Xbutton);
+        Xbutton.appendChild(bt);
+        Xbutton.setAttribute("class", "delete")
+        allergyItems.appendChild(li);
+      }
+    }
+  else{
+    localStorage.setObj("allergyKey", allergies)
   }
 }
 
