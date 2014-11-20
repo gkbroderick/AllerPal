@@ -1,3 +1,14 @@
+.snack-safe {
+  font-family: "Merriweather";
+  color: white;
+  font-size: 2em;
+  text-align: center;
+  padding: 5% 0;
+  text-transform: uppercase;
+  background-color: #f34f3a;
+  margin-bottom: 0;
+}
+
 .labels {
   font-family: "Merriweather-Light";
   margin-bottom: 2.5%;
@@ -27,17 +38,6 @@
   line-height: 1.5em;
  }
 
-button {
-  font-size: 1.5em;
-  font-family: "Merriweather-Light";
-  padding:3%;
-  background-color: #0a9bae;
-  color:white;
-  border-radius: .625em;
-  border:none;
-  width:95%;
-  margin: 1% 2.5% 3% 2.5%;
-}
 .edit {
   width: 3.125em;
   border-radius: 1.5625em ;
