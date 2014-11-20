@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>allerPal</title>
+    <title>allerPal Ver 3 test</title>
     <meta charset="utf-8">
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/typography.css">
@@ -16,36 +16,28 @@
       <h1> Join us and snack safe</h1>
     </header>
     <main>
-      <form>
+      <section class="Child-Name">
         <label class="labels" for="name">Enter Your Child's Name / ID</label>
         <input type="text" name="name" id="nameInput">
         <input type= "button" class="edit" id="nameSubmit" value="add">
-        <h2 id="nameOutput"></h2>
-      </form>
+        <h2 id="nameOutput" class="nameOutput"></h2>
+      </section>
 
       <section class="middle">
-        <ul id="allergyItems"></ul>
-        <form onsubmit="addAllergy(); return false;">
-          <label class="labels">Enter Child's Allergy</label>
-          <div class="clearfix"></div>
-          <input type="text" id="allergyInput" name="allergyInput" placeholder="Allergy" />
-          <button class="edit">add</button>
-        </form>
+        <ul id="allergyItems" class="middle"></ul>
+        <label class="labels">Enter Child's Allergy</label>
+        <div class="clearfix"></div>
+        <input type="text" id="allergyInput" name="allergyInput" placeholder="Allergy">
+        <input type="button" class="edit" id="addAnotherAllergy" value="add">
       </section>
 
-      <section class="clearfix">
-        <p class="info"> Add Another Allergy </p>
-        <button class="plus" onclick="addAllergy(); return false;"> + </button>
-      </section>
-
-    <section class="flexbox">
-      <button class="flex-item"> Publish </button>
-      <button class="flex-item"> Add Another Child </button>
+    <section>
+      <button> Publish </button>
     </section>
 
     </main>
 
-    <script src="js/allergy_ver2.js"></script>
+    <script src="js/allergy_ver3.js"></script>
     <script src="js/vendor/jquery-1.10.2.min.js"></script>
     <script src="js/vendor/modernizr-2.6.2.min.js"></script>
 </body>

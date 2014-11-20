@@ -30,12 +30,13 @@
   color:#585958;
 }
 
- #allergyItems { /*formats allergies and buttons*/
+ #allergyItems { /*formats list of allergies and X buttons*/
   font-family: "Montreal";
   font-size: 1.25em;
   color:#585958;
   font-weight: lighter;
   line-height: 1.5em;
+  padding-top: 1em;
  }
 
 .edit {
