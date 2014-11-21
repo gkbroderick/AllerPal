@@ -10,7 +10,7 @@ button:active, input[type="button"]:active {
   }
 
   .warning-text {
-    font-size: 1.35em;
+    font-size: 1em;
   }
 
   .labels {
@@ -19,5 +19,9 @@ button:active, input[type="button"]:active {
 
   button:hover, input[type="button"]:hover {
      background-color:#585958 ;
+  }
+
+.output-list-layout {
+  font-size: 2em;
   }
 }
