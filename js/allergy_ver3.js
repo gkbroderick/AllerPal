@@ -24,6 +24,7 @@ if (childName) {
   document.getElementById("nameInput").onkeydown=function(e){
       if(e.keyCode==13){
         childNameOutput.textContent = childName.value;
+        window.scrollTo(0, 420);
     }
   }
 }
