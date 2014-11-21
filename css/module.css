@@ -45,7 +45,7 @@
   margin-bottom: .5em;
 }
 
- #allergyItems { /*formats list of allergies and X buttons*/
+#allergyItems { /*formats list of allergies and X buttons*/
   font-family: "Montreal";
   font-size: 1.25em;
   font-weight: lighter;
@@ -64,11 +64,11 @@
 }
 
 .delete {
+  font-family: "Montreal";
   width: 2.5em;
   border-radius: 1.25em;
   background-color: #f34f3a;
   font-size: 1em;
   padding: .5em;
   margin-left: .75em;
-  font-family: "Montreal";
 }
