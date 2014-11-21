@@ -6,7 +6,7 @@ var allergies = [
 	{ value: "peanuts"},
 	{ value: "tree nuts"},
 	{ value: "wheat"},
-	{ value: "gluten"}
+	{ value: "gluten"},
 	{ value: "soy"}
 ];
 
