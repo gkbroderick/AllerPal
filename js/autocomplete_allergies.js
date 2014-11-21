@@ -1,16 +1,16 @@
 var allergies = [
-	{ value: "milk"},
-	{ value: "eggs"},
-	{ value: "fish"},
-	{ value: "shellfish"},
-	{ value: "peanuts"},
-	{ value: "tree nuts"},
-	{ value: "wheat"},
-	{ value: "gluten"},
-	{ value: "soy"}
+	{ value: "Milk"},
+	{ value: "Eggs"},
+	{ value: "Fish"},
+	{ value: "Shellfish"},
+	{ value: "Peanuts"},
+	{ value: "Tree Nuts"},
+	{ value: "Wheat"},
+	{ value: "Gluten"},
+	{ value: "Soy"}
 ];
 
 // $(document).ready(function()
 $('#allergyInput').autocomplete({
-  lookup: allergies 
+  lookup: allergies
 });
