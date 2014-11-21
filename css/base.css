@@ -41,6 +41,8 @@ footer, header, hgroup, menu, nav, section {
 body {
   line-height: 1;
   font-family: "Merriweather-Light";
+  color:#585958;
+  word-wrap:break-word;
 }
 
 ol, ul {
@@ -71,7 +73,8 @@ button {
 }
 
 input[type="text"] {
-  padding:1em 0 1em 0;
+  padding:1em 0 1em 1em;
+  font-size: .75em;
   width:60%;
   margin:3% 3% 5% 0;
   border-radius: .625em;

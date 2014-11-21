@@ -1,17 +1,28 @@
 
-button:active {
+button:active, input[type="button"]:active {
   background-color:#585958 ;
 }
 
-@media only screen and (min-width: 480px) {
+@media only screen and (min-width: 30em) {
 
-.Page-Header {
-  font-size: 1.5em;
-  letter-spacing: .05em;
-}
+  .Page-Header {
+    font-size: 1.5em;
+    letter-spacing: .05em;
+  }
 
-.warning-text {
-  font-size: 1.35em;
+  .warning-text {
+    font-size: 1.35em;
+  }
+
+  .labels {
+    font-size: 1.65em;
+  }
+
+  button:hover, input[type="button"]:hover {
+     background-color:#585958 ;
   }
 }
+
+
+
 
