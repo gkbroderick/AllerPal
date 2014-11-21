@@ -40,9 +40,14 @@ footer, header, hgroup, menu, nav, section {
 
 body {
   line-height: 1;
-  font-family: "Merriweather-Light";
+  font-family: "Merriweather";
+  font-weight: lighter;
   color:#585958;
   word-wrap:break-word;
+}
+
+a {
+  text-decoration: none;
 }
 
 ol, ul {
