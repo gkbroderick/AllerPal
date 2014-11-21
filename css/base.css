@@ -41,6 +41,8 @@ footer, header, hgroup, menu, nav, section {
 body {
   line-height: 1;
   font-family: "Merriweather-Light";
+  color:#585958;
+  word-wrap:break-word;
 }
 
 ol, ul {
