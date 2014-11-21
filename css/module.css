@@ -6,7 +6,7 @@
 
 .warning-text p {
   font-family: "Montreal";
-  font-size: 1em;
+  font-size: 1.5em;
   line-height: 1.25em;
   color:white;
   margin-bottom: 0.7em;
@@ -22,7 +22,7 @@
 }
 
 .Page-Header {
-  font-size: 1.25em;
+  font-size: 2em;
   color: white;
   text-align: center;
   padding: 4% 0;
@@ -33,7 +33,7 @@
 
 .labels {
   margin-bottom: 2.5%;
-  font-size: 1.25em;
+  font-size: 1.5em;
   margin-top: 45px;
   display: block;
 }
@@ -41,9 +41,8 @@
 .nameOutput {
   font-family:"Montreal";
   font-weight: lighter;
-  font-size: 2em;
+  font-size: 2.5em;
   margin-bottom: .5em;
-  word-wrap:break-word;
 }
 
  #allergyItems { /*formats list of allergies and X buttons*/
@@ -57,7 +56,7 @@
 .add {
   width: 3.125em;
   border-radius: 1.5625em ;
-  font-size: 1em;
+  font-size: 1.5em;
   line-height: 2em;
   background-color: #0a9bae;
   border: none;
@@ -68,7 +67,7 @@
   width: 2.5em;
   border-radius: 1.25em;
   background-color: #f34f3a;
-  font-size: 0.65em;
+  font-size: 1em;
   padding: .5em;
   margin-left: .75em;
   font-family: "Montreal";
