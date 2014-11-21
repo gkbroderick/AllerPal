@@ -6,7 +6,8 @@ var allergies = [
 	{ value: "peanuts"},
 	{ value: "tree nuts"},
 	{ value: "wheat"},
-	{ value: "soya"}
+	{ value: "gluten"}
+	{ value: "soy"}
 ];
 
 // $(document).ready(function()
